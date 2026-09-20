@@ -107,6 +107,7 @@ namespace sem_1_lab_00_server_monitoring
             Console.WriteLine($"| Total players registered: {ServerPlayersData.ElementAt(1).ElementAt(0)}");
             Console.WriteLine($"| Total players online: {ServerPlayersData.ElementAt(1).ElementAt(1)}");
             Console.WriteLine("| ");
+            Console.WriteLine("| All players online:");
             foreach (var player in ServerPlayersData.ElementAt(0))
             {
                 Console.WriteLine($"| {player}");
