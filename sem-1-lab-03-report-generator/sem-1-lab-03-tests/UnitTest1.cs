@@ -11,7 +11,7 @@ namespace sem_1_lab_03_tests
         private string[] _lines = null!;
 
         [SetUp]
-        public void SetUp() => _lines = File.ReadAllLines("../../../event_server.log");
+        public void SetUp() => _lines = File.ReadAllLines("event_server.log");
 
         [Test]
         public void Build_UsesOnlyTheEventTimeRange()

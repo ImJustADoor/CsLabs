@@ -100,7 +100,7 @@
 
         static void Main(string[] args)
         {
-            string[] log_text = File.ReadAllLines("../../../event_server.log");
+            string[] log_text = File.ReadAllLines("event_server.log");
 
             string Report = BuildReport(log_text);
 
