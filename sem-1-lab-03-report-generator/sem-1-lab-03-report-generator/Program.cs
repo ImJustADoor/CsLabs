@@ -6,7 +6,7 @@
         {
             bool isEventRunning = false;
             string event_name = "";
-            string event_date = "";
+            DateTime event_date = new DateTime();
             string winner = "";
             int winners_points = 0;
             string event_item = "";
@@ -23,7 +23,11 @@
                 {
                     isEventRunning = true;
                     event_name = line.Substring(line.IndexOf("Событие началось: ") + 18);
-                    event_date = line.Substring(0, 10);
+                    
+                    
+                    string date = line.Substring(0, 10);
+
+                    event_date = DateTime.Parse(date);
                 }
                 if (line.Contains("закрыто"))
                 {
@@ -95,7 +99,7 @@
                 }
             }
 
-            return ($"# Итоги события: {event_name}\n\nДата: {event_date}\nПобедитель: {winner}\nОчки победителя: {winners_points}\nИвентовый предмет: {event_item}\nУтешительная награда клана {loser}: {losers_points} очков\nЛучший игрок ивента: {best_player} ({best_player_stat} побед)\n\nПредупреждений во время события: {warnings_during_event}\nОшибок во время события: {errors_during_event}");
+            return ($"# Итоги события: {event_name}\n\nДата: {event_date.ToString("dd.MM.yyyy")}\nПобедитель: {winner}\nОчки победителя: {winners_points}\nИвентовый предмет: {event_item}\nУтешительная награда клана {loser}: {losers_points} очков\nЛучший игрок ивента: {best_player} ({best_player_stat} побед)\n\nПредупреждений во время события: {warnings_during_event}\nОшибок во время события: {errors_during_event}");
         }
 
         static void Main(string[] args)
